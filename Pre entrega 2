@@ -1,0 +1,47 @@
+“Asistente Virtual para la Gestión del Tiempo"
+
+**Nombre y Apellido del Autor:** Angel Diaz Marin  
+**Nombre del Curso:** Inteligencia artificial: Generación de Prompts  
+**Nº de Comisión:** 61255  
+**Nombre del Proyecto:** "Asistente Virtual para la Gestión del Tiempo"
+
+### Presentación del Problema a Abordar
+
+**Problema Elegido:** Dificultades en la gestión eficiente del tiempo tanto en el ámbito personal como profesional.  
+**Relevancia del Problema:** En un mundo cada vez más acelerado y lleno de distracciones, la gestión eficaz del tiempo se ha convertido en un desafío significativo para muchas personas. La mala gestión del tiempo puede llevar a una menor productividad, estrés y una disminución de la calidad de vida.
+
+### Desarrollo de la Propuesta de Solución
+
+**Solución Propuesta:** Desarrollo de un asistente virtual basado en IA que ayude a los usuarios a organizar su tiempo de manera más eficiente.  
+**Vinculación con Modelos de IA:** El asistente utilizará modelos de procesamiento del lenguaje natural (NLP) y visión por computadora para entender y responder a las consultas de los usuarios sobre la gestión del tiempo.  
+**Prompts de IA:** Implementación de Prompts como "Organizar mi agenda para mañana", "Establecer un recordatorio para la reunión del lunes", o "Sugerir un bloque de tiempo para una sesión de estudio ininterrumpido".
+**Funcionalidad Adicional:** Incorporación de capacidades de visión por computadora para interpretar y responder a entradas visuales.
+
+### Ejemplos de Aplicación:
+
+- **Reconocimiento de Escritura Manuscrita:** El asistente podría analizar imágenes de notas escritas a mano y convertirlas en texto digital. Por ejemplo, si un usuario toma una foto de su lista de tareas escrita en papel, el asistente podría digitalizarla y organizarla.
+- **Análisis de Calendarios Físicos:** Procesar imágenes de calendarios físicos o planificadores para actualizar automáticamente la agenda digital del usuario.
+
+### Prompts de IA para el Procesamiento de Imágenes
+
+- **Implementación de Prompts:** Como "Digitalizar esta lista de tareas escrita a mano" o "Actualizar mi calendario digital con estos eventos del calendario físico".
+
+### Tecnologías y Herramientas Relevantes
+
+- **IA para el Procesamiento de Imágenes:** Uso de bibliotecas y frameworks como OpenCV, TensorFlow o PyTorch para el reconocimiento de patrones e imágenes.
+- **OCR (Reconocimiento Óptico de Caracteres):** Utilizar herramientas de OCR para convertir la escritura manuscrita o impresa en texto editable.
+
+### Mejoras y Optimizaciones Implementadas en el Código (POC)
+
+- **Optimización de Consultas a la API:** Se redujo el número de llamadas a la API de OpenAI, realizando consultas solo cuando el texto extraído es relevante.
+- **Fraccionamiento de Problemas:** Se estructuró el código para abordar problemas específicos en funciones separadas, mejorando la claridad y la eficiencia.
+- **Indentación y Estructura del Código:** Se siguió un estilo de codificación coherente para mejorar la legibilidad y el mantenimiento del código.
+- **POC (Prueba de Concepto):** El código fuente desarrollado forma parte de un POC para demostrar la viabilidad técnica y funcional del asistente virtual en la gestión del tiempo.
+
+### Justificación de la Viabilidad de la Expansión
+
+**Viabilidad Técnica:** Con el avance de las tecnologías de visión por computadora y la disponibilidad de bibliotecas de código abierto, integrar el procesamiento de imágenes es técnicamente factible.
+
+### Justificación de la Viabilidad del Proyecto
+
+**Viabilidad Técnica:** La tecnología de IA actual permite la creación de asistentes virtuales con capacidades de comprensión y respuesta a lenguaje natural. Además, existen APIs y plataformas disponibles que facilitan la
