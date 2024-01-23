@@ -1,0 +1,62 @@
+import openai
+import matplotlib.pyplot as plt
+from PIL import Image, ImageDraw, ImageFont
+import ipywidgets as widgets
+from IPython.display import display, clear_output
+
+# Configura tu clave API de OpenAI
+openai.api_key = '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'
+
+def generar_respuesta_gpt3(texto_entrada):
+    try:
+        respuesta = openai.Completion.create(
+            engine="text-davinci-003",  # Reemplaza con un motor de engine válido
+            prompt=texto_entrada,
+            max_tokens=50
+        )
+        return respuesta.choices[0].text.strip()
+    except Exception as e:
+        return f"Error: {e}"
+
+def texto_a_imagen(texto, size=(400, 200)):
+    try:
+        imagen = Image.new('RGB', size, color = (73, 109, 137))
+        d = ImageDraw.Draw(imagen)
+        d.text((10,10), texto, fill=(255,255,0))
+        return imagen
+    except Exception as e:
+        return f"Error: {e}"
+
+# Widgets para la interacción del usuario
+texto_input = widgets.Textarea(description='Texto:')
+boton_texto_a_texto = widgets.Button(description='Texto a Texto')
+boton_texto_a_imagen = widgets.Button(description='Texto a Imagen')
+output = widgets.Output()
+
+texto_history = []
+
+def on_texto_a_texto_clicked(b):
+    with output:
+        clear_output()
+        respuesta = generar_respuesta_gpt3(texto_input.value)
+        texto_history.append(respuesta)
+        print("Respuesta GPT-3:", respuesta)
+
+def on_texto_a_imagen_clicked(b):
+    with output:
+        clear_output()
+        imagen = texto_a_imagen(texto_input.value)
+        plt.imshow(imagen)
+        plt.show()
+
+boton_texto_a_texto.on_click(on_texto_a_texto_clicked)
+boton_texto_a_imagen.on_click(on_texto_a_imagen_clicked)
+
+# Mensaje de bienvenida
+mensaje_bienvenida = widgets.HTML(
+    value="<h1>¡Bienvenido al Asistente Virtual!</h1>"
+          "<p>Introduce tu texto y elige una opción para procesarlo.</p>"
+)
+
+# Mostrar widgets
+display(mensaje_bienvenida, texto_input, boton_texto_a_texto, boton_texto_a_imagen, output)
