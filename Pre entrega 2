@@ -1,116 +1,95 @@
-“Asistente Virtual para la Gestión del Tiempo"
+Nombre del Proyecto: Asistente Virtual para la Gestión del Tiempo
 
-**Nombre y Apellido del Autor:** Angel Diaz Marin  
-**Nombre del Curso:** Inteligencia artificial: Generación de Prompts  
-**Nº de Comisión:** 61255  
-**Nombre del Proyecto:** "Asistente Virtual para la Gestión del Tiempo"
+Autor: Angel Diaz Marin
 
-### Presentación del Problema a Abordar
+Curso: Inteligencia Artificial: Generación de Prompts
 
-**Problema Elegido:** Dificultades en la gestión eficiente del tiempo tanto en el ámbito personal como profesional.  
-**Relevancia del Problema:** En un mundo cada vez más acelerado y lleno de distracciones, la gestión eficaz del tiempo se ha convertido en un desafío significativo para muchas personas. La mala gestión del tiempo puede llevar a una menor productividad, estrés y una disminución de la calidad de vida.
+Comisión: 61255
 
-### Desarrollo de la Propuesta de Solución
+Presentación del Problema a Abordar
+Problema Elegido: Dificultades en la gestión eficiente del tiempo en ámbitos personales y profesionales.
 
-**Solución Propuesta:** Desarrollo de un asistente virtual basado en IA que ayude a los usuarios a organizar su tiempo de manera más eficiente.  
-**Vinculación con Modelos de IA:** El asistente utilizará modelos de procesamiento del lenguaje natural (NLP) y visión por computadora para entender y responder a las consultas de los usuarios sobre la gestión del tiempo.  
-**Prompts de IA:** Implementación de Prompts como "Organizar mi agenda para mañana", "Establecer un recordatorio para la reunión del lunes", o "Sugerir un bloque de tiempo para una sesión de estudio ininterrumpido".
-**Funcionalidad Adicional:** Incorporación de capacidades de visión por computadora para interpretar y responder a entradas visuales.
+Relevancia del Problema: La gestión ineficiente del tiempo puede resultar en baja productividad y estrés, afectando negativamente la calidad de vida en un mundo lleno de distracciones.
 
-### Ejemplos de Aplicación:
+Desarrollo de la Propuesta de Solución
+Solución Propuesta: Un asistente virtual basado en IA para ayudar en la organización eficiente del tiempo.
 
-- **Reconocimiento de Escritura Manuscrita:** El asistente podría analizar imágenes de notas escritas a mano y convertirlas en texto digital. Por ejemplo, si un usuario toma una foto de su lista de tareas escrita en papel, el asistente podría digitalizarla y organizarla.
-- **Análisis de Calendarios Físicos:** Procesar imágenes de calendarios físicos o planificadores para actualizar automáticamente la agenda digital del usuario.
+Vinculación con Modelos de IA: Uso de modelos de procesamiento de lenguaje natural (NLP) para comprender y responder a consultas relacionadas con la gestión del tiempo.
 
-### Prompts de IA para el Procesamiento de Imágenes
+Prompts de IA: Prompts como "Organizar mi agenda para mañana" y "Establecer un recordatorio para la reunión del lunes".
 
-- **Implementación de Prompts:** Como "Digitalizar esta lista de tareas escrita a mano" o "Actualizar mi calendario digital con estos eventos del calendario físico".
+Expansión de la Propuesta de Solución
+Funcionalidad Adicional: Capacidad de interpretar y responder a entradas visuales mediante visión por computadora.
 
-### Tecnologías y Herramientas Relevantes
+Ejemplos de Aplicación
+Reconocimiento de Escritura Manuscrita: Digitalización de notas manuscritas a texto digital.
+Análisis de Calendarios Físicos: Actualización automática de la agenda digital a partir de imágenes de calendarios físicos.
+Prompts de IA para el Procesamiento de Imágenes
+"Digitalizar esta lista de tareas escrita a mano".
+"Actualizar mi calendario digital con estos eventos del calendario físico".
+Tecnologías y Herramientas Relevantes
+IA para el Procesamiento de Imágenes: Uso de OpenCV, TensorFlow, o PyTorch.
+OCR (Reconocimiento Óptico de Caracteres): Conversión de texto escrito a mano o impreso en texto editable.
+Justificación de la Viabilidad de la Expansión
+Viabilidad Técnica: Factible con el avance en tecnologías de visión por computadora y disponibilidad de bibliotecas de código abierto.
+Justificación de la Viabilidad del Proyecto
+Viabilidad Técnica: Posible con la tecnología de IA actual y la disponibilidad de APIs y plataformas.
+Recursos y Tiempo: Factible considerando los recursos disponibles y el tiempo asignado para el proyecto.
+Metodología y Implementación
+Metodología: Desarrollo iterativo con pruebas continuas de prompts y ajustes basados en resultados.
 
-- **IA para el Procesamiento de Imágenes:** Uso de bibliotecas y frameworks como OpenCV, TensorFlow o PyTorch para el reconocimiento de patrones e imágenes.
-- **OCR (Reconocimiento Óptico de Caracteres):** Utilizar herramientas de OCR para convertir la escritura manuscrita o impresa en texto editable.
-
-### Mejoras y Optimizaciones Implementadas en el Código (POC)
-
-- **Optimización de Consultas a la API:** Se redujo el número de llamadas a la API de OpenAI, realizando consultas solo cuando el texto extraído es relevante.
-- **Fraccionamiento de Problemas:** Se estructuró el código para abordar problemas específicos en funciones separadas, mejorando la claridad y la eficiencia.
-- **Indentación y Estructura del Código:** Se siguió un estilo de codificación coherente para mejorar la legibilidad y el mantenimiento del código.
-- **POC (Prueba de Concepto):** El código fuente desarrollado forma parte de un POC para demostrar la viabilidad técnica y funcional del asistente virtual en la gestión del tiempo.
-
-### Justificación de la Viabilidad de la Expansión
-
-**Viabilidad Técnica:** Con el avance de las tecnologías de visión por computadora y la disponibilidad de bibliotecas de código abierto, integrar el procesamiento de imágenes es técnicamente factible.
-
-### Justificación de la Viabilidad del Proyecto
-
-**Viabilidad Técnica:** La tecnología de IA actual permite la creación de asistentes virtuales con capacidades de comprensión y respuesta a lenguaje natural. Además, existen APIs y plataformas disponibles que facilitan  la integración de estas capacidades en aplicaciones.
-
-Recursos y Tiempo: Dado el alcance del proyecto y los recursos disponibles (como plataformas de IA de código abierto y tutoriales), es viable desarrollar una versión básica del asistente virtual en el tiempo asignado para el proyecto.
-
-
+Codigo fuente
 
 import openai
-import matplotlib.pyplot as plt
-from PIL import Image, ImageDraw, ImageFont
 import ipywidgets as widgets
-from IPython.display import display, clear_output
+from IPython.display import display
 
-# Configura tu clave API de OpenAI
-openai.api_key = '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'
+openai.api_key = 'me la bloquean si la dejo aca pueden aplicar las de ustedes para probar el codigo'
 
 def generar_respuesta_gpt3(texto_entrada):
     try:
-        respuesta = openai.Completion.create(
-            engine="gpt-3.5-turbo",  
-            prompt=texto_entrada,
-            max_tokens=50
+        respuesta = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo-1106",
+            messages=[
+                {"role": "system", "content": "Tienes una conversación con un asistente inteligente."},
+                {"role": "user", "content": texto_entrada}
+            ]
         )
-        return respuesta.choices[0].text.strip()
+        return respuesta.choices[0].message['content']
     except Exception as e:
         return f"Error: {e}"
 
-def texto_a_imagen(texto, size=(400, 200)):
-    try:
-        imagen = Image.new('RGB', size, color = (73, 109, 137))
-        d = ImageDraw.Draw(imagen)
-        d.text((10,10), texto, fill=(255,255,0))
-        return imagen
-    except Exception as e:
-        return f"Error: {e}"
-
-# Widgets para la interacción del usuario
-texto_input = widgets.Textarea(description='Texto:')
-boton_texto_a_texto = widgets.Button(description='Texto a Texto')
-boton_texto_a_imagen = widgets.Button(description='Texto a Imagen')
-output = widgets.Output()
-
-texto_history = []
-
-def on_texto_a_texto_clicked(b):
-    with output:
-        clear_output()
-        respuesta = generar_respuesta_gpt3(texto_input.value)
-        texto_history.append(respuesta)
-        print("Respuesta GPT-3:", respuesta)
-
-def on_texto_a_imagen_clicked(b):
-    with output:
-        clear_output()
-        imagen = texto_a_imagen(texto_input.value)
-        plt.imshow(imagen)
-        plt.show()
-
-boton_texto_a_texto.on_click(on_texto_a_texto_clicked)
-boton_texto_a_imagen.on_click(on_texto_a_imagen_clicked)
-
-# Mensaje de bienvenida
-mensaje_bienvenida = widgets.HTML(
-    value="<h1>¡Bienvenido al Asistente Virtual!</h1>"
-          "<p>Introduce tu texto y elige una opción para procesarlo.</p>"
+# Widget for input text
+texto_entrada = widgets.Text(
+    value='',
+    placeholder='Escribe aquí tu solicitud',
+    description='Entrada:',
+    disabled=False
 )
 
-# Mostrar widgets
-display(mensaje_bienvenida, texto_input, boton_texto_a_texto, boton_texto_a_imagen, output)
+# Send button
+boton_enviar = widgets.Button(
+    description='Enviar',
+    disabled=False,
+    button_style='', 
+    tooltip='Haz clic para enviar'
+)
 
+# Response display area
+area_respuesta = widgets.Output()
+
+# Function to handle the button click event
+def al_clicar(boton):
+    with area_respuesta:
+        area_respuesta.clear_output()
+        # Print the welcome message in Spanish
+        print("\n¡Bienvenido a nuestro Asistente AI! Estamos aquí para ayudarte con todas tus consultas. No dudes en preguntar cualquier cosa.")
+        print(f"Procesando: {texto_entrada.value}")
+        respuesta_gpt3 = generar_respuesta_gpt3(texto_entrada.value)
+        print(f"Respuesta: {respuesta_gpt3}")
+
+boton_enviar.on_click(al_clicar)
+
+# Display widgets
+display(texto_entrada, boton_enviar, area_respuesta)
 
