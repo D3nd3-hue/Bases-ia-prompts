@@ -10,7 +10,7 @@ openai.api_key = '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'
 def generar_respuesta_gpt3(texto_entrada):
     try:
         respuesta = openai.Completion.create(
-            engine="gpt-3.5-turbo",  # Reemplaza con un motor de engine válido
+            engine="gpt-3.5-turbo",  
             prompt=texto_entrada,
             max_tokens=50
         )
